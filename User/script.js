@@ -1,16 +1,16 @@
-// Shery.makeMagnet(".magnet-target", {
-//   //Parameters are optional.
-//   //Default values:
-//   ease: "cubic-bezier(3, 5, 3, 5)",
-//   duration: .1,
-// });
-// Shery.mouseFollower({
-//   //Parameters are optional.
-//   skew: true,
-//   ease: "cubic-bezier(0.23, 1, 0.320, 1)",
-//   duration: .35,
+Shery.makeMagnet(".magnet-target", {
+  //Parameters are optional.
+  //Default values:
+  ease: "cubic-bezier(3, 5, 3, 5)",
+  duration: .1,
+});
+Shery.mouseFollower({
+  //Parameters are optional.
+  skew: true,
+  ease: "cubic-bezier(0.23, 1, 0.320, 1)",
+  duration: .35,
  
-// });
+});
 let cartIcon = document.getElementById("cartIcon");
 let cartbar=document.getElementById("cartbar");
 let cartHide= document.getElementById("carthide");
