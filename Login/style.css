@@ -1,0 +1,193 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+}
+.container{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  background-color: rgba(255, 255, 255, 0.633);
+  background: url(https://i.pinimg.com/originals/ef/df/c1/efdfc1cdf202cbf47354a79fd3b3fb50.jpg);
+}
+.card{
+    width: 80%;
+    aspect-ratio: 1;
+    max-width: 600px;
+    overflow: hidden;
+background-color: rgba(255, 255, 255, 0.407);
+backdrop-filter: blur(2px);
+border-radius: 3%;
+
+
+}
+.card-h{
+    height: 10%;
+
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content:  space-around;
+    position: relative;
+}
+.card-h h3{
+position: relative;
+}
+.card-h h3::after{
+    display: block;
+    content: "";
+    width: 0%;
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    height: 3px;  
+    border-radius: 3px; 
+    transition: width .5s linear;
+}
+.card-h h3:hover::after{
+ width: 100%;
+}
+.card-h .toggle{
+    cursor: pointer;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    height: 50%;
+    aspect-ratio: 16/9;
+    background-color: rgb(255, 255, 255);
+    border-radius: 1.5pc;
+    display: flex;
+    align-items: center;
+    transition: all .5s;
+}
+.card-h .toggle.right{
+    background-color: rgba(32, 151, 243, 1);
+}
+.card-h .toggle::after{
+    display: block;
+    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z'%3E%3C/path%3E%3C/svg%3E");
+    height: 100%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: rgb(215, 215, 215);
+    position: absolute;
+    left: -5%;
+    transition: all .5s;
+    transform: rotateZ(180deg);
+}
+.card-h .toggle.right::after{
+    transform: rotateZ(0deg);
+ left: 50%;
+}
+.card-h .toggle.right ~ .type::after,.card-h .toggle + .type::after{
+    width: 100%;
+} .card-h .toggle.right + .type::after{
+    width: 0%;
+}
+.card-m{
+  
+    height: 90%;
+  perspective: 2500px;
+}
+.card-rotate{
+    height: 100%;
+    position: relative;
+    transition: transform .5s;
+    transform-style: preserve-3d;
+}
+.card-rotate .card-m-log{
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.card-rotate .card-m-sign{
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.card-m-log>h2, .card-m-sign>h2{
+    position: absolute;
+    left: 50%;
+    top: 5%;
+    transform: translateX(-50%);
+}
+.input-box{
+    width: 80%;
+    height: 10%;
+   background-color: transparent;
+  
+    /* border-bottom: 4px solid white ; */
+    margin: 3% 0%;
+    position: relative;
+    /* &::after{
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 10%;
+        border-radius: 10px;
+        background-color: #ffffff;
+    } */
+}
+.input-box label{
+    height: 100%;
+    display: flex;
+    background-color: rgb(255, 255, 255);
+    align-items: center;
+    margin-left: 2%;
+}
+.input-box svg{
+    display: inline;
+    width: 5%;
+}
+.input-box input{
+    height: 80%;
+    width: 90%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    margin-left: 2%;
+    font-size: 100%;
+}
+button{
+    width: 80%;
+    height: 10%;
+    font-size: large;
+    font-weight: 600;
+    background-color: black;
+    color: white;
+    border: none;
+    outline: none;
+    margin-top: 3%;
+    transition: all .3s;
+}
+button:hover{
+    cursor: pointer;
+    background-color: white;
+    color: black;
+}
+.card-m-log>button,.card-m-sign>button{
+    border-radius: 5pc;
+}
+.card-rotate.rotated{
+    transform: rotateY(180deg);
+}
+@media (width<500px){
+    .card-m-log>h2, .card-m-sign>h2{
+        font-size: 15px;
+    }
+    .input-box input{
+        font-size: 75%;
+    }
+}
