@@ -1,8 +1,11 @@
+body{
+  background-color: #F1F1F1;
+}
 *{
   margin: 0;padding: 0;
 }
 .container{
-
+  background-color: #F1F1F1;
 }
 .col-lg-8{
   width: 100%;
